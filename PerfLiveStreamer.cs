@@ -9,7 +9,7 @@ using System.Text;
 /// <summary>
 /// Stream performance data via UDP connection
 /// </summary>
-public class SP_PerfLiveStreamer : MonoBehaviour {
+public class PerfLiveStreamer : MonoBehaviour {
 	Socket sending_socket = new Socket(
 		AddressFamily.InterNetwork, SocketType.Dgram, ProtocolType.Udp);
 	IPAddress send_to_address;
@@ -17,18 +17,8 @@ public class SP_PerfLiveStreamer : MonoBehaviour {
 	private const int port_number = 11000;
 
 	void Awake() {
-		// set IP address accordingly
-		switch (PublicSettings.UDP_DEBUG_MODE) {
-			case PublicSettings.UDP_LOCAL_MODE:
-				this.send_to_address = IPAddress.Parse("127.0.0.1");
-				break;
-			case PublicSettings.UDP_RELEASE_MODE:
-				this.send_to_address = IPAddress.Parse("169.254.143.183");
-				break;
-			case PublicSettings.UDP_ETHERNET_MODE:
-				this.send_to_address = IPAddress.Parse("169.254.143.183");
-				break;
-		}
+		// set IP address properly
+		this.send_to_address = IPAddress.Parse("127.0.0.1");
 		// configure target endPoint (IP, port)
 		this.sending_end_point = new IPEndPoint(send_to_address, port_number);
 	}

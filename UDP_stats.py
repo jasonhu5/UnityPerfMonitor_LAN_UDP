@@ -15,6 +15,7 @@ if len(sys.argv) < 2:
 elif sys.argv[1] not in set({"0", "1"}):
     raise Exception(exception_text)
 
+# change IP and choose modes properly
 UDP_IP = "127.0.0.1"  # local IP
 if sys.argv[1] == "1":
     UDP_IP = "169.254.143.183"  # ethernet IP

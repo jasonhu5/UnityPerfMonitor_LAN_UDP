@@ -2,7 +2,7 @@
 
 #### A demo video is available at [this link](https://youtu.be/WgAZL7bsXec).
 
-* ### [Installation](#installtion-1)
+* ### [Installation](#installation-1)
 
 
 ---
